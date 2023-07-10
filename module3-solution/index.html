@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app='NarrowItDownApp' lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: red;
+      }
+    </style>
+    <title>Narrow Down Your Menu Choice</title>
+  </head>
+<body>
+   <div ng-controller='NarrowItDownController as term' class="container">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div class="form-group">
+      <input type="text" ng-model="term.searchTerm" placeholder="Search term: e.g., rice, broth, chicken" class="form-control">
+    </div>
+    <div class="form-group narrow-button">
+      <button ng-click="term.logMenuItems();" class="btn btn-primary">Narrow It Down For Me!</button>
+    </div>
+  </br>
+  </br>
+  </br>
+  <ul>
+     <li ng-repeat="item in term.found">
+       <b>name: </b>{{ item.name }}<b>, short_name: </b>{{ item.short_name }}<b>, description: </b>{{item.description}}
+       <button ng-click="term.removeItem($index);" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> Don't want this one!</button>
+     </li>
+   </ul>
+   <div ng-hide="term.flag" class="emptyMessage">Nothing found.</div>
+  </div>
+
+</body>
+</html>
