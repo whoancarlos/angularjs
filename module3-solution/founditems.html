@@ -1,0 +1,7 @@
+<ul>
+   <li ng-repeat="item in term.found">
+     <b>name: </b>{{ item.name }}<b>, short_name: </b>{{ item.short_name }}<b>, description: </b>{{item.description}}
+     <button ng-click="term.removeItem({index: $index});" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> Don't want this one!</button>
+   </li>
+ </ul>
+ <div ng-hide="term.flag" class="emptyMessage">Nothing found.</div>
