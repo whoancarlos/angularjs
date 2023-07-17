@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app='MenuApp' lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: red;
+      }
+      a {
+        font-size: 1.5em;
+      }
+      span {
+        font-size: 1.5em;
+      }
+    </style>
+    <title>Welcome to our Restaurant</title>
+  </head>
+<body>
+  <h1>Welcome to our Restaurant</h1>
+
+   <ui-view></ui-view>
+
+  <!-- Libraries -->
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+  <script src="lib/jquery-3.1.0.min.js"></script>
+
+  <!-- Modules -->
+  <script src="src/MenuApp/menuApp.module.js"></script>
+  <script src="src/data/data.module.js"></script>
+
+  <!-- Routes -->
+  <script src="src/routes.js"></script>
+
+  <!-- 'ShoppingList' module artifacts -->
+  <script src="src/data/categoriesmenu.component.js"></script>
+  <script src="src/data/itemsmenu.component.js"></script>
+
+  <script src="src/data/main-categoriesmenu.controller.js"></script>
+  <script src="src/data/item-menu.controller.js"></script>
+  <script src="src/data/menudata.service.js"></script>
+
+</body>
+</html>
